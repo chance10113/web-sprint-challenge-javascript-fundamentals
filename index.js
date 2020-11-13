@@ -135,11 +135,12 @@ function lowerCaseNames(zooAnimals) {
   only the animals with a population less than 5.
   */
 function lowPopulationAnimals(zooAnimals) {
-  const lowPopulationAnimals = zooAnimals.filter(function(item){
-    if (item.population <= 5){
-      return `${item.animalNames}, ${item.population}, ${item.scientific_name}, ${item.state}`
+  const lowPopulationAnimals = zooAnimals.filter(function (item) {
+    if (item.population <= 5) {
+      return `${item.animalNames}, ${item.population}, ${item.scientific_name}, ${item.state}`;
     }
-  }); return lowPopulationAnimals;
+  });
+  return lowPopulationAnimals;
 }
 
 //console.log('lowPopulationAnimals(zooAnimals): ', lowPopulationAnimals(zooAnimals));
@@ -150,9 +151,10 @@ function lowPopulationAnimals(zooAnimals) {
   and an initial value for the count.
   */
 function USApop(zooAnimals) {
-  const totalAnimalPopulation = zooAnimals.reduce(function(accumulator, item){
-    return accumulator + item.population
-  },0); return totalAnimalPopulation
+  const totalAnimalPopulation = zooAnimals.reduce(function (accumulator, item) {
+    return accumulator + item.population;
+  }, 0);
+  return totalAnimalPopulation;
 }
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
