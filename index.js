@@ -25,7 +25,7 @@ However, the parent function (myFunction), cannot access the inside of the neste
 function summation(num) {
   let sum = 0;
   let i = 0;
-  for (; i <= 4; i++) {
+  for (; i <= num; i++) {
     sum = sum + i;
   }
   return sum;
@@ -285,6 +285,23 @@ const cuboidTwo = new CuboidMakerTwo({
 // Find out the formulas for volume and surface area for cubes
 //and create those methods using the dimension properties from CuboidMaker.
 // Test your work by logging out your volume and surface area. 🦄 💪
+
+class CubeMaker extends CuboidMakerTwo{
+  constructor(attrs){
+    super(attrs);
+  }
+  volume(){
+    let vol = length * length * length;
+    return vol
+  }
+  surfaceArea(){
+    let surfArea = (length * length) * 6;
+    return surfArea
+  }
+} 
+
+
+
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo() {
