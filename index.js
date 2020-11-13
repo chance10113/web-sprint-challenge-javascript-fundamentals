@@ -60,8 +60,8 @@ const zooAnimals = [
   function animalNames(zooAnimals){
    const displayNames = [];
     zooAnimals.forEach(function(item) {
-      return displayNames.push `Name ${item.animal_name}, ${item.scientific_name}.`
-    }); 
+     displayNames.push( `name: ${item.animal_name}, scientific: ${item.scientific_name}`)
+    }); return displayNames;
   }
   
 
@@ -73,10 +73,11 @@ const zooAnimals = [
   */
   function lowerCaseNames(zooAnimals){
     const lowCaseAnimalNames = zooAnimals.map(function(item){
-      return `${item.animal_name.lowerCase}`
+      return  `${item.animal_name.toLowerCase()}`
     })
   }
   
+  console.log('lowerCaseNames(zooAnimals): ', lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoos are concerned about animals with a lower population count. 
@@ -227,8 +228,8 @@ const cuboidTwo = new CuboidMakerTwo({
 })
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
- console.log(cuboidTwo.volume()); // 100
- console.log(cuboidTwo.surfaceArea()); // 130
+ //console.log(cuboidTwo.volume()); // 100
+ //console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
