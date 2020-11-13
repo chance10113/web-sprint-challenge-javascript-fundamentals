@@ -127,25 +127,32 @@ function lowerCaseNames(zooAnimals) {
   return lowCaseAnimalNames;
 }
 
-console.log("lowerCaseNames(zooAnimals): ", lowerCaseNames(zooAnimals));
+//console.log("lowerCaseNames(zooAnimals): ", lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoos are concerned about animals with a lower population count. 
   Using filter, create a new array of objects called lowPopulationAnimals which contains 
   only the animals with a population less than 5.
   */
-function lowPopulationAnimals(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowPopulationAnimals(zooAnimals) {
+  const lowPopulationAnimals = zooAnimals.filter(function(item){
+    if (item.population <= 5){
+      return `${item.animalNames}, ${item.population}, ${item.scientific_name}, ${item.state}`
+    }
+  }); return lowPopulationAnimals;
 }
 
+//console.log('lowPopulationAnimals(zooAnimals): ', lowPopulationAnimals(zooAnimals));
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoos need to know their total animal population across the United States. 
   Find the total population from all the zoos using the .reduce() method. 
   Remember the reduce method takes two arguments: a callback (which itself takes two args), 
   and an initial value for the count.
   */
-function USApop(/*Your Code Here*/) {
-  /*Your Code Here*/
+function USApop(zooAnimals) {
+  const totalAnimalPopulation = zooAnimals.reduce(function(accumulator, item){
+    return accumulator + item.population
+  },0); return totalAnimalPopulation
 }
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
