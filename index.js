@@ -119,8 +119,9 @@ const zooAnimals = [
     return sum;
   }
 // 🦁🦁🦁 Create a function named multiply that returns the product of two numbers 🦁🦁🦁
-  function multiply(/*Your Code Here */){
-   /*Your Code Here */
+  function multiply(num1, num2){
+   let sum = num1 * num2;
+   return sum;
   }
 
  // 🦁🦁🦁 Create a function named greeting that accepts a first and last name 
@@ -150,8 +151,10 @@ const zooAnimals = [
   Create a constructor function named CuboidMaker that accepts properties for length, width, 
   and height which can be initialized as an object
 */
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(attrs){
+  this.length = attrs.length;
+  this.width = attrs.width;
+  this.height = attrs.height;
 }
 
 
@@ -161,7 +164,10 @@ function CuboidMaker(/*Your Code Here */){
   Formula for cuboid volume: length * width * height   */
 
 
-
+CuboidMaker.prototype.volume = function(){
+  let vol = this.length * this.width * this.height;
+  return vol
+}
 
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
@@ -171,7 +177,10 @@ function CuboidMaker(/*Your Code Here */){
   2 * (length * width + length * height + width * height)  */
 
 
-
+  CuboidMaker.prototype.surfaceArea = function(){
+    let surfArea =  2 *(this.length * this.width + this.length * this.height + this.width * this.height)
+    return surfArea
+  }
 
 
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
@@ -179,26 +188,47 @@ function CuboidMaker(/*Your Code Here */){
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
-
+const cuboid = new CuboidMaker({
+  length: 4,
+  width: 5,
+  height: 5
+})
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+ //console.log(cuboid.volume()); // 100
+ //console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. 
 //Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor(attrs){
+    this.height = attrs.height;
+    this.length = attrs.length;
+    this.width = attrs.width;
+  }
+  surfaceArea(){
+    let surfArea =  2 *(this.length * this.width + this.length * this.height + this.width * this.height)
+    return surfArea
+  }
+  volume(){
+    let vol = this.length * this.width * this.height;
+    return vol
+  }
+  
 }
-
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5
+})
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+ console.log(cuboidTwo.volume()); // 100
+ console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
