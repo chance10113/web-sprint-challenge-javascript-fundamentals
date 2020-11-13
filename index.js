@@ -17,7 +17,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+/*Due to the way closure works, the nested function inherits it's parents scope, and can also access global scope. 
+However, the parent function (myFunction), cannot access the inside of the nested function.*/
 
 
 
